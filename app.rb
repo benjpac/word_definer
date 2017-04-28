@@ -10,10 +10,23 @@ get('/') do
   erb(:index)
 end
 
-post('/') do
+post('/index') do
   word = params[:word]
-  new_word = Word.new({:word=> word})
+  new_word = Word.new({:name=> word})
   new_word.save()
   @words = Word.all()
   erb(:index)
+end
+
+get('/word/:id') do
+  @word = Word.find(params[:id])
+  erb(:word)
+end
+
+post('/word/:id') do
+  @word = Word.find(params[:id])
+  definition = params[:definition]
+  new_definition = Definition.new({:definition=> definition})
+  @word.add_definition(new_definition)
+  erb(:word)
 end
