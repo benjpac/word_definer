@@ -1,0 +1,27 @@
+body {
+  background-color: #e2f9ff
+}
+
+.inline {
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.larger-font {
+  font-size: 18px;
+}
+
+.padding-left {
+  padding-left: 20px;
+}
+
+.reduce-padding-top {
+  padding-top: 1px;
+}
+
+#kid {
+  font-family: 'Gloria Hallelujah', cursive;
+}

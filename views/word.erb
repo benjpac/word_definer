@@ -1,12 +1,20 @@
-<div>
-  <%= @word.name() %>
-  <% @word.definitions().each() do |definition| %>
-    <p><%= definition.definition() %></p>
-  <% end %>
+<div class="panel panel-info">
+  <h3 class="padding-left"><%= @word.name() %></h3>
+  <div class="panel-body">
+    <ol>
+      <% @word.definitions().each() do |definition| %>
+        <li><i><%= definition.definition() %></i></li>
+      <% end %>
+    </ol>
+  </div>
 </div>
-<form action="/word/<%= @word.id() %>" method="post">
-  <label for="definition">Enter definition:</label>
+<form class="center" action="/word/<%= @word.id() %>" method="post">
+  <p>What do you think <i><b><%= @word.name() %></i></b> means? (add every possible definition you can think of!)</p>
   <input type="text" name="definition">
-  <button type="submit" name="button">Add</button>
+  <button type="submit" class="btn btn-info" name="button">Add Definition</button>
 </form>
-<a href="/">Home</a><br>
+<hr>
+<div class="center">
+  <a href="/"><button type="button" class="btn btn-success"><span class="larger-font">Add more words!</span></button></a>
+</div>
+<br>

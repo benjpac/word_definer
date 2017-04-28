@@ -1,12 +1,11 @@
-<div>
-  <ul>
-    <% @words.each() do |word| %>
-      <li><a href="/word/<%= word.id() %>"><%= word.name() %></a></li>
-    <% end %>
-  </ul>
-</div>
+<p>Enter a word that that you've heard before, but do not know the meaning of.</p>
+<p>Once you've entered a word, click on it to go to a page where you can enter what you <i>think</i> it might mean.</p>
 <form action="/index" method="post">
-  <label for="word">Enter a word:</label>
-  <input type="text" name="word">
-  <button type="submit" name="button">Add</button>
+  <div class="form-group">
+    <input type="text" name="word">
+    <button type="submit" class="btn btn-info" name="button">Add Word</button>
+  </div>
 </form>
+<% @words.each() do |word| %>
+  <h4 class="inline"><a href="/word/<%= word.id() %>"><%= word.name() %></a></h4>
+<% end %>
