@@ -9,6 +9,6 @@
   <br><br>
   <p>Now click on your word to go to a page where you can enter what you <i>think</i> it might mean.</p>
   <% @words.each() do |word| %>
-    <h4 class="inline"><a href="/word/<%= word.id() %>"><%= word.name() %></a>&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+    <h3 class="inline"><a href="/word/<%= word.id() %>"><%= word.name() %></a>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
   <% end %>
 </div>

@@ -12,7 +12,9 @@ _Make an application that contains two classes: One for Word, and one for Defini
 
 * _Must have Ruby and Sinatra installed_
 * _Clone this repository_
-* _Open terminal and run ruby app.rb_
+* _Open terminal and run "bundle" followed by "ruby app.rb"_
+
+_Or go here to view it on the web: _
 
 ## Known Bugs
 

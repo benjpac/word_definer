@@ -43,4 +43,13 @@ describe(Word) do
       expect(new_word.definitions()).to eq([new_definition])
     end
   end
+  
+  describe('#add_image') do
+    it('saves url to string') do
+      new_word = Word.new({:name=> "test"})
+      new_word.save()
+      new_word.add_image("url.com")
+      expect(new_word.image()).to eq("url.com")
+    end
+  end
 end
