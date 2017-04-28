@@ -14,7 +14,7 @@ _Make an application that contains two classes: One for Word, and one for Defini
 * _Clone this repository_
 * _Open terminal and run "bundle" followed by "ruby app.rb"_
 
-_Or go here to view it on the web: _
+_Or view it on the web here: https://boiling-hamlet-40797.herokuapp.com/_
 
 ## Known Bugs
 
