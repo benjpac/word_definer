@@ -1,14 +1,37 @@
-<div class="panel panel-info">
-  <h3 class="padding-left"><%= @word.name() %></h3>
-  <div class="panel-body">
-    <ol>
-      <% @word.definitions().each() do |definition| %>
-        <li><i><%= definition.definition() %></i></li>
-      <% end %>
-    </ol>
-    <img src="<%= @word.image() %>" alt="<%= @word.name() %>">
+<% if @word.image() == "" %>
+  <div class="panel panel-info">
+    <h3 class="padding-left"><%= @word.name() %></h3>
+    <div class="panel-body">
+      <ol>
+        <% @word.definitions().each() do |definition| %>
+          <li><i><%= definition.definition() %></i></li>
+        <% end %>
+      </ol>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-info">
+        <h3 class="padding-left"><%= @word.name() %></h3>
+        <div class="panel-body">
+          <ol>
+            <% @word.definitions().each() do |definition| %>
+              <li><i><%= definition.definition() %></i></li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-body">
+          <img src="<%= @word.image() %>" alt="<%= @word.name() %>">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <div class="center">
   <form action="/word/<%= @word.id() %>" method="post">
