@@ -6,15 +6,23 @@
         <li><i><%= definition.definition() %></i></li>
       <% end %>
     </ol>
+    <img src="<%= @word.image() %>" alt="<%= @word.name() %>">
   </div>
 </div>
-<form class="center" action="/word/<%= @word.id() %>" method="post">
-  <p>What do you think <i><b><%= @word.name() %></i></b> means? (add every possible definition you can think of!)</p>
-  <input type="text" name="definition">
-  <button type="submit" class="btn btn-info" name="button">Add Definition</button>
-</form>
-<hr>
+
 <div class="center">
+  <form action="/word/<%= @word.id() %>" method="post">
+    <p>What do you think <i><b><%= @word.name() %></i></b> means? Add every possible definition you can think of here!</p>
+    <input class="longer-input" type="text" name="definition" required>
+    <button type="submit" class="btn btn-info" name="button">Add Definition</button>
+  </form>
+  <br>
+  <form action="/word/<%= @word.id() %>" method="post">
+    <p>Have you found an image of <i><b><%= @word.name() %></i></b> on the web? Copy and paste the URL here to add it!</p>
+    <input class="longer-input" type="text" name="image" required="">
+    <button type="submit" class="btn btn-info" name="button">Add Image</button>
+  </form>
+  <br><br>
   <a href="/"><button type="button" class="btn btn-success"><span class="larger-font">Add more words!</span></button></a>
 </div>
 <br>

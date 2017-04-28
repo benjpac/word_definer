@@ -1,11 +1,12 @@
 class Word
   @@words = []
-  attr_accessor(:name, :id, :definitions)
+  attr_accessor(:name, :id, :definitions, :image)
 
   def initialize(attributes)
     @name = attributes[:name]
     @id = @@words.length() + 1
     @definitions = []
+    @image = ""
   end
 
   def save
@@ -14,6 +15,10 @@ class Word
 
   def add_definition(definition)
     @definitions.push(definition)
+  end
+
+  def add_image(url)
+    @image = url
   end
 
   def self.all

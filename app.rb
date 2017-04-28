@@ -18,6 +18,8 @@ post('/index') do
   erb(:index)
 end
 
+    # <img class="float-right" src='<%= @word.image() %>' alt=""> 
+
 get('/word/:id') do
   @word = Word.find(params[:id])
   erb(:word)
@@ -25,8 +27,14 @@ end
 
 post('/word/:id') do
   @word = Word.find(params[:id])
-  definition = params[:definition]
-  new_definition = Definition.new({:definition=> definition})
-  @word.add_definition(new_definition)
+  if params[:definition] != nil
+    definition = params[:definition]
+    new_definition = Definition.new({:definition=> definition})
+    @word.add_definition(new_definition)
+  end
+  if params[:image] != nil
+    url = params[:image]
+    @word.add_image(url)
+  end
   erb(:word)
 end
