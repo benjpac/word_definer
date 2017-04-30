@@ -25,6 +25,10 @@ class Word
     @@words
   end
 
+  def self.clear
+    @@words = []
+  end
+
   def self.find(id)
     found_word = nil
     @@words.each() do |word|

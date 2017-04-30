@@ -3,6 +3,9 @@ require 'word'
 require 'definition'
 
 describe(Word) do
+  before() do
+    Word.clear()
+  end
 
   describe('#word') do
     it('return word') do
@@ -30,7 +33,7 @@ describe(Word) do
     it('returns word with id paramenter as string') do
       new_word = Word.new({:name=> "test"})
       new_word.save()
-      expect(Word.find("2")).to eq(new_word)
+      expect(Word.find(new_word.id())).to eq(new_word)
     end
   end
 
@@ -43,7 +46,7 @@ describe(Word) do
       expect(new_word.definitions()).to eq([new_definition])
     end
   end
-  
+
   describe('#add_image') do
     it('saves url to string') do
       new_word = Word.new({:name=> "test"})
